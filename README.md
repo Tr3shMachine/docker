@@ -11,6 +11,8 @@ For the DB, please fix an .env file that includes:
 MYSQL_ROOT_PASSWORD=password
 MYSQL_USER=wordpress
 MYSQL_PASSWORD=1
+MYSQL_DATABASE=wordpress
+
 ```
 Change these values for your own.
 
