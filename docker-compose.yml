@@ -42,7 +42,9 @@ services:
       - WORDPRESS_DB_USER=$MYSQL_USER
       - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
       - WORDPRESS_DB_NAME=wordpress
-    volumes: ['./wordpress:/var/www/html']
+    volumes: 
+      - ./wordpress:/var/www/html
+      - ./conf/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
       - wp-network
 
@@ -56,7 +58,7 @@ services:
       - "80:80"
     volumes:
       - ./wordpress:/var/www/html
-      - ./nginx-conf:/etc/nginx/conf.d
+      - ./conf/nginx:/etc/nginx/conf.d
       - ./nginx-logs:/var/log/nginx
     networks:
       - wp-network
